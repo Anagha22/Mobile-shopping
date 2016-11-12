@@ -1,0 +1,70 @@
+
+	<!DOCTYPE html>
+	<html lang="en">
+	<form action="product.php" method="POST">
+	<head> 
+	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" /> 
+	<title>product page</title> 
+	</head> 
+	<body> 
+	<body background="/onlinemobile/bg.jpg">
+	<table width="100%" border="0"> 
+	  <tr> 
+	    <td colspan="3"><h1>Pick your mobile phones</h1></td> 
+	  </tr> 
+	  <tr> 
+	    <td colspan="3"><b><a href="listbooks.php?catid=<?php echo trim(stripslashes($row['gen_id']));?>&catname=<?php echo stripslashes(strtoupper($row['gen_name']));?>"><?php echo stripslashes(strtoupper($row['gen_name']));?></a> > <?php echo $row['title'];?> </b></td> 
+	  </tr> 
+	  <tr> 
+	    <td width="12%"> </td> 
+	    <td width="19%"> </td> 
+	    <td width="69%"> </td> 
+	  </tr> 
+	  <tr> 
+	    <td rowspan="5" valign="top"><img src="/onlinemobile/lenovo_vibe.jpg" height="200" width="100"" width="112" height="108" /></td> 
+	    
+	    <td> </td> 
+	  </tr> 
+	  <tr> 
+	    <td><strong>Model:</strong></td> 
+	    <td><?php echo "Â£".$row['price'];?></td> 
+	  </tr> 
+	  <tr> 
+	    <td><strong>Price:</strong></td> 
+	    <td><?php echo $row['ISBN'];?></td> 
+	  </tr> 
+	  <tr> 
+	    <td><strong>Description: </strong></td> 
+	    <td><?php echo $row['date_of_pub'];?></td> 
+	  </tr> 
+	  <tr> 
+	    <td><strong>Colors:</strong></td> 
+	    <td><?php echo $auth;?></td> 
+	  </tr> 
+	  <form action="addtocart.php" method="post"> 
+	  <tr> 
+	    <td> </td> 
+	    <td><strong>Quantity</strong></td> 
+	    <td><label> 
+	     <select name="qty">; 
+	<?php 
+	  for($i=1; $i<12; $i++) { 
+	 echo '<option value='.$i.'>'.$i.'</option>'; 
+	     } 
+	?> 
+	 </select> 
+	    </label> 
+	   </td> 
+	    <input name="bid" type="hidden" value="<?php echo $row['book_id']?>" /></td> 
+	  </tr> 
+	  <tr> 
+	    <td> </td> 
+	    <td> </td> 
+	    <td><label> 
+	      <input type="submit" name="submit" value="Add to Cart" /> 
+	    </label></td> 
+	  </tr> 
+	  </form> 
+	</table> 
+	</body> 
+	</html> 
